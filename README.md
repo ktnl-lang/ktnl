@@ -21,7 +21,7 @@ CodeShip|[ ![Codeship Status for zxj5470/ktnl-gradle](https://app.codeship.com/p
 	* [Build and Run](#build-and-run)
 		* [Build](#build)
 	* [Dependencies](#dependencies)
-	* [Completed](#completed)
+	* [Progress](#progress)
 	* [CI build scripts](#ci-build-scripts)
 		* [Travis CI](#travis-ci)
 		* [Codeship CI](#codeship-ci)
@@ -35,28 +35,28 @@ CodeShip|[ ![Codeship Status for zxj5470/ktnl-gradle](https://app.codeship.com/p
 **Windows has not been supported presently.**`(JetBrains: “What？”)`
 
 ## Build and Run
-- make sure you have installed the `kotlin-native compiler ` and your path has contained `konanc`.If not please download [kotlin-native/releases] first.(https://github.com/JetBrains/kotlin-native/releases)  (current version is `0.4`)
+- make sure you have installed the `kotlin-native compiler` and `konanc` is in your path. If not, please download [kotlin-native/releases] first.(https://github.com/JetBrains/kotlin-native/releases)  (current version is `0.4`)
 
 -  bash :
-    ```bash
-    git clone https://github.com/zxj5470/ktnl-gradle
-    cd ktnl-gradle/ktnl/cmake-build-debug
-    ./ktnl.kexe ../kt.ktnl
-    ```
+```bash
+git clone https://github.com/zxj5470/ktnl-gradle
+cd ktnl-gradle/ktnl/cmake-build-debug
+./ktnl.kexe ../kt.ktnl
+```
 
 ### Build
 - git clone the repositry and open with `Intellij Idea` or `Visual Studio Code`.
 
-  - Idea (building recommand) : `run` the `./gradlew buildInLinux` 
+  - Idea (building recommand) : run `./gradlew buildInLinux` 
   - VSCode (coding recommand) : run the `./ktnl/build.sh`
-  - CLion (in `ktnl` repository,using CMake to build)
+  - CLion (in `ktnl` repository, using CMake to build)
 
 ## Dependencies
-- `konanc` (Of Course)
-- Nothing but `kotlin-stdlib`
+- `konanc` (Of course)
+- `kotlin-stdlib`
 
-## Completed
-There are so many things to do,and I have just finished these as follows.
+## Progress
+There are so many things to do, while I have just finished these as follows.
 
 ```scheme
 (define a 2333)
@@ -68,9 +68,10 @@ outputs:
 ```
 
 ## CI build scripts
+
 ### Travis CI
 
-[.travis.yaml](https://github.com/zxj5470/ktnl-gradle/blob/master/.travis.yml)
+[.travis.yml](https://github.com/zxj5470/ktnl-gradle/blob/master/.travis.yml)
 
 ### Codeship CI
 - build
