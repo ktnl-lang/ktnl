@@ -1,0 +1,39 @@
+
+apply plugin: 'jacoco'
+
+subprojects {
+    buildscript {
+        ext.kotlin_version = '1.1.2-5'
+        repositories {
+            mavenCentral()
+            maven {
+                url "https://dl.bintray.com/jetbrains/kotlin-native-dependencies"
+            }
+        }
+
+        dependencies {
+            classpath "org.jetbrains.kotlin:kotlin-native-gradle-plugin:+"
+            classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        }
+    }
+}
+
+repositories {
+	mavenCentral()
+}
+
+
+task buildInLinux(type: Exec) {
+    workingDir projectDir.canonicalPath
+    commandLine "${projectDir.canonicalPath}/ktnl/build.sh"
+}
+task buildInWindows(type:Exec){
+    workingDir "${projectDir.canonicalPath}/ktnl"
+    commandLine "${projectDir.canonicalPath}/ktnl/build.bat"
+}
+task runTest(type:Exec){
+    dependsOn buildInWindows
+    workingDir "${projectDir.canonicalPath}/ktnl"
+    def cmd=["${projectDir.canonicalPath}/ktnl/build/ktnl.exe","${projectDir.canonicalPath}/ktnl/kt.ktnl"]
+    commandLine cmd
+}
