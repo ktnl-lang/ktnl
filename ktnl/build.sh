@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 echo "Begin build"
-DIR=$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd )
-set PATH=%PATH%
+# DIR=$(cd "$(dirname "${BASH_SOURCE[0]}" )" && pwd )
+# a=$(ls -d ~/.konan/ko* | tail -n 1)
+export PATH=$PATH
 
 if [ x$TARGET == x ]; then
 case "$OSTYPE" in
@@ -11,7 +12,7 @@ case "$OSTYPE" in
   *)        echo "unknown: $OSTYPE" && exit 1;;
 esac
 fi
-
+echo $TARGET;
 var=CFLAGS_${TARGET}
 CFLAGS=${!var}
 var=LINKER_ARGS_${TARGET}
@@ -21,7 +22,7 @@ COMPILER_ARGS=${!var} # add -opt for an optimized build.
 
 mkdir -p $DIR/build/c_interop/
 mkdir -p $DIR/build/bin/
-echo $PATH
+
 konanc $COMPILER_ARGS -target $TARGET $DIR/src/main/kotlin \
        -o $DIR/build/bin/ktnl || exit 1
 echo "Artifact path is $DIR/build/bin/ktnl.kexe"
