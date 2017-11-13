@@ -20,9 +20,9 @@ LINKER_ARGS=${!var}
 var=COMPILER_ARGS_${TARGET}
 COMPILER_ARGS=${!var} # add -opt for an optimized build.
 
-mkdir -p $DIR/build/c_interop/
-mkdir -p $DIR/build/bin/
+mkdir -p ./build/c_interop/
+mkdir -p ./build/bin/
 
-konanc $COMPILER_ARGS -target $TARGET $DIR/src/main/kotlin \
-       -o $DIR/build/bin/ktnl || exit 1
+konanc $COMPILER_ARGS -target $TARGET ./src/main/kotlin \
+       -o ./build/bin/ktnl || exit 1
 echo "Artifact path is $DIR/build/bin/ktnl.kexe"
