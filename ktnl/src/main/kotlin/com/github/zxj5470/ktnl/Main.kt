@@ -10,18 +10,14 @@ import com.github.zxj5470.ktnl.core.*
 import platform.posix.*
 
 fun main(args: Array<String>) {
-    val args1=handleArgs(args)
-    val fileName = args1[0]
+    val args1 = handleArgs(args)
 
-    val fileUtil=FileUtil(fileName)
-    if(fileUtil.file!=null) {
-        val ktnlFileContent = fileUtil.readText()
-        parse(ktnlFileContent)
+    FileUtil(args1[0])?.run {
+        parse(readText())
     }
 
-
 //    val s=Stack<Char>()
-//    for(i in 65..100)s.push(i.toChar())
+//    for(i in 65..100) s.push(i.toChar())
 //    println(s.size)
 //    s.forEach { println(it) }
     
