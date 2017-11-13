@@ -30,26 +30,34 @@ CodeShip|[ ![Codeship Status for zxj5470/ktnl-gradle](https://app.codeship.com/p
 
 
 ## Platform
-**Run in OS X or Linux.**
+**Run in OS X or Linux.**  
+(Actually Windows can also build and run it. But you can't build by CLion in Windows.Just try Idea or VS Code ~ )
 
-**Windows has not been supported presently.**`(JetBrains: “What？”)`
+**Windows(CLion) has not been supported presently.**  
+`(JetBrains: “What？”)`
+
+But you can build and run in Intellij idea.
 
 ## Build and Run
 - make sure you have installed the `kotlin-native compiler` and `konanc` is in your path. If not, please download [kotlin-native/releases] first.(https://github.com/JetBrains/kotlin-native/releases)  (current version is `0.4`)
 
 -  bash :
 ```bash
-git clone https://github.com/zxj5470/ktnl-gradle
-cd ktnl-gradle/ktnl/cmake-build-debug
+git clone https://github.com/ktnl-lang/ktnl
+
+cd ktnl-gradle/ktnl
+
+./build.sh
+
 ./ktnl.kexe ../kt.ktnl
 ```
 
 ### Build
-- git clone the repositry and open with `Intellij Idea` or `Visual Studio Code`.
+- git clone the repositry and open with `Intellij Idea` or `Visual Studio Code` at root `ktnl` dir.
 
-  - Idea (building recommand) : run `./gradlew buildInLinux` 
-  - VSCode (coding recommand) : run the `./ktnl/build.sh`
-  - CLion (in `ktnl` repository, using CMake to build)
+  - Idea (building recommand) : run gradle task or run commandLine `./gradlew buildInLinux` 
+  - VSCode (coding recommand. For CLion and Idea haven't got source code, even though CLion has `.knm` file in which you can see function declares.Just git clone `kotlin-native` and open into a same workspace in latest VS Code) 
+  - CLion (EAP 2017.3 or latest. Just open at `ktnl` submodule dir, using CMake to build)
 
 ## Dependencies
 - `konanc` (Of course)

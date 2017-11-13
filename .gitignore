@@ -1,3 +1,6 @@
-.idea
-.settings
+.idea/
+.settings/
 .project
+
+build/
+cmake-build-debug/

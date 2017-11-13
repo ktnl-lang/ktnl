@@ -20,7 +20,6 @@ LINKER_ARGS=${!var}
 var=COMPILER_ARGS_${TARGET}
 COMPILER_ARGS=${!var} # add -opt for an optimized build.
 
-cd ktnl
 mkdir -p ./build/c_interop/
 mkdir -p ./build/bin/
 

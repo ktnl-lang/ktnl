@@ -72,3 +72,11 @@ fun String.isNumeric():Boolean{
 fun StringBuilder.removeAll() {
     this.length = 0
 }
+
+var stringBuilderIsString = false
+
+var String.isString: Boolean
+    get() = stringBuilderIsString
+    set(value) {
+        stringBuilderIsString = value
+    }

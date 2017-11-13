@@ -24,7 +24,7 @@ repositories {
 
 
 task buildInLinux(type: Exec) {
-    workingDir projectDir.canonicalPath
+    workingDir "${projectDir.canonicalPath}/ktnl"
     commandLine "${projectDir.canonicalPath}/ktnl/build.sh"
 }
 task buildInWindows(type:Exec){
