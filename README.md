@@ -7,7 +7,7 @@ Kotlin Native for Lisp
 
 CI|status
 :---|:---:
-Travis CI|[![Build Status](https://travis-ci.org/zxj5470/ktnl-gradle.svg?branch=master)](https://travis-ci.org/zxj5470/ktnl-gradle)
+Travis CI|[![Build Status](https://travis-ci.org/ktnl-lang/ktnl.svg?branch=master)](https://travis-ci.org/zxj5470/ktnl-gradle)
 CodeShip|[ ![Codeship Status for zxj5470/ktnl-gradle](https://app.codeship.com/projects/c811a1c0-a761-0135-bce0-229ed7207fef/status?branch=master)](https://app.codeship.com/projects/255803)
 
 [![GitHub language count](https://img.shields.io/badge/language-Kotlin--Native-orange.svg)]() 
