@@ -17,6 +17,7 @@ class FileUtil(filePath: String, mode: String="r") {
 
     fun readText()=file!!.readText()
 
+    fun close()= fclose(file)
 }
 
 fun CArrayPointer<FILE>.readText(): String {
